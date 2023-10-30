@@ -95,8 +95,13 @@ public class Hex : MonoBehaviour
     {
         if (isChecking)
         {
-            if (isPossible) { h.enabled = true; h.color = new Color(); }
-            else { h.enabled = true; h.color = new Color(); }
+            if (isPossible) { 
+                h.enabled = true; 
+                h.color = new Color(0,1,0,1); 
+            }
+            else { h.enabled = true; 
+                h.color = new Color(1,0,0,1); 
+            }
         }
         else
         {

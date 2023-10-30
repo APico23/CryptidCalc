@@ -8,5 +8,6 @@ public enum Region
     mountain,
     forest,
     swamp,
-    desert
+    desert,
+    none
 }

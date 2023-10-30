@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HexRow : MonoBehaviour
 {
+    
     [SerializeField] Hex[] hexes;
     // Start is called before the first frame update
     void Start()
@@ -28,12 +29,12 @@ public class HexRow : MonoBehaviour
         }
     }
 
-    public void checkHex()
+    public void checkHex(manager m)
     {
         for (int i = 0; i < hexes.Length; i++)
         {
             hexes[i].isChecking= true;
-            if (hexChecker(hexes[i]))
+            if (hexChecker(hexes[i], m))
             {
                 hexes[i].isPossible = true;
             }
@@ -42,10 +43,31 @@ public class HexRow : MonoBehaviour
                 hexes[i].isPossible = false;
             }
         }
-    } 
+    }
 
-    bool hexChecker(Hex h)
+    public void clearHex()
     {
+        for (int i = 0; i < hexes.Length; i++)
+        {
+            hexes[i].isChecking = false;
+        }
+    }
+
+    bool hexChecker(Hex h, manager m)
+    {
+        bool check = false;
+        for (int i = 0; i < m.regionOptions.Length; i++)
+        {
+            if (m.regionOptions[i] == h.region)
+            {
+                check = true;
+            }
+        }
+        if (check == false)
+        {
+            return false;
+        }
+        
         return true;
     }
 }

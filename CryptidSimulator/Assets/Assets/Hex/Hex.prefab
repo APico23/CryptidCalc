@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -249,6 +249,9 @@ MonoBehaviour:
   region: 0
   territory: 2
   building: 8
+  isPossible: 0
+  isChecking: 0
+  coords: {x: 0, y: 0}
   r: {fileID: 3012362718570105209}
   t1: {fileID: 3012362718430163060}
   t2: {fileID: 3012362719839243673}

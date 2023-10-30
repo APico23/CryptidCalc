@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HexMap : MonoBehaviour
 {
+    [SerializeField] manager m;
     [SerializeField] HexRow[] hexRows;
 
     // Start is called before the first frame update
@@ -26,12 +27,21 @@ public class HexMap : MonoBehaviour
         }
     }
 
-    void checkHexes()
+    public void checkHexes()
     {
         for (int i = 0; i < hexRows.Length; i++)
         {
-            hexRows[i].checkHex();
+            hexRows[i].checkHex(m);
         }
     }
+
+    public void clearHexes()
+    {
+        for (int i = 0; i < hexRows.Length; i++)
+        {
+            hexRows[i].clearHex();
+        }
+    }
+
 
 }
